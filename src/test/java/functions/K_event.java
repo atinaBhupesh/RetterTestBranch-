@@ -75,7 +75,7 @@ public class K_event {
 		eventStartDate.click();
 		Thread.sleep(2000);
 		act.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).build().perform();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		act.sendKeys(date).build().perform();
 		Thread.sleep(2000);
 		eventEndDate.click();

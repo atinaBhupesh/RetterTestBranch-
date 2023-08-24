@@ -5,10 +5,10 @@
     <classes>
       <class name="functions.A_testClass">
         <methods>
-          <include name="createEvent"/>
           <include name="logout"/>
           <include name="backToHomePage"/>
           <include name="LoginDeprrmentUser"/>
+          <include name="createAvailabilityRequest"/>
           <include name="backToHomePage2"/>
         </methods>
       </class> <!-- functions.A_testClass -->

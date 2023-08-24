@@ -20,6 +20,7 @@ public class A_testClass extends B_baseClass {
 	I_escalation esc;
 	J_information info;
 	K_event eve;
+	L_availbilityRequest req;
 	
 	
 	@BeforeClass
@@ -37,6 +38,7 @@ public class A_testClass extends B_baseClass {
 		esc= new I_escalation (driver) ;
 		info = new J_information (driver) ;
 		eve=new K_event (driver);
+		req= new L_availbilityRequest (driver);
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 		
 	}
@@ -54,7 +56,7 @@ public class A_testClass extends B_baseClass {
 		Reporter.log("starting the process of creating manual alarm by attribute-"+date, true );
 		MA.commonForManualAlarm(driver);
 		MA.manualAlarmByAttribute(date,driver);
-		Reporter.log("the process of creatingcreating manual alarm by attriute is completed-"+date, true );
+		Reporter.log("the process of creating manual alarm by attriute is completed-"+date, true );
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 	
 		Reporter.log("starting the process of creating manual alarm by resource-"+date, true );
@@ -95,25 +97,25 @@ public class A_testClass extends B_baseClass {
 		Reporter.log("starting the process of creating test alarm by attribute-"+date, true );
 		TA.commonForTestAlarm(driver);
 		TA.testAlarmByAttribute(date,time, driver);
-		Reporter.log("the process of creatingcreating test alarm by attriute is completed-"+date, true );
+		Reporter.log("the process of creating test alarm by attriute is completed-"+date, true );
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 	
 		Reporter.log("starting the process of creating test alarm by resource-"+date, true );
 		TA.commonForTestAlarm(driver);
 		TA.testAlarmByResource(date, time, driver);
-		Reporter.log("the process of creatingcreating test alarm by resource is completed-"+date, true );
+		Reporter.log("the process of creating test alarm by resource is completed-"+date, true );
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 	
 		Reporter.log("starting the process of creating test alarm by alarm loop -"+date, true );
 		TA.commonForTestAlarm(driver);
 		TA.testAlarmByAlarmLoop(date, time, driver);
-		Reporter.log("the process of creatingcreating test alarm by alarm loop is completed-"+date, true );
+		Reporter.log("the process of creating test alarm by alarm loop is completed-"+date, true );
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 	
 		Reporter.log("starting the process of creating test alarm by fire fighter-"+date, true );
 		TA.commonForTestAlarm(driver);
 		TA.testAlarmByFirefighter(date, time, driver);
-		Reporter.log("the process of creatingcreating test alarm by fire fighter is completed-"+date, true );
+		Reporter.log("the process of creating test alarm by fire fighter is completed-"+date, true );
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 	}
 	
@@ -124,7 +126,7 @@ public class A_testClass extends B_baseClass {
 	{
 		Reporter.log("starting the process of creating storm alarm by resource-"+date, true );
 		SA.createrStormAlarm(date, driver);
-		Reporter.log("the process of creatingcreating test alarm by resource  is completed-"+date, true );
+		Reporter.log("the process of creating test alarm by resource  is completed-"+date, true );
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 
 	}
@@ -139,7 +141,7 @@ public class A_testClass extends B_baseClass {
 
 		Reporter.log("starting the process of creating storm alarm with escalation-"+date, true );
      	esc.stormAlarmWithEscalation(date, driver);
-		Reporter.log("the process of creatingcreating test alarm with escalation is completed-"+date, true );
+		Reporter.log("the process of creating test alarm with escalation is completed-"+date, true );
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 		
 	}
@@ -150,19 +152,19 @@ public class A_testClass extends B_baseClass {
 		Reporter.log("starting the process of creating information by attribute-"+date, true );
 		info.commonForInfo(date, time, driver);
 		info.createInfoByAttri(date, time, driver);
-		Reporter.log("the process of creating creating creating information by attribute is completed-"+date, true );
+		Reporter.log("the process of creating creating information by attribute is completed-"+date, true );
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 
 		Reporter.log("starting the process of creating information by resource-"+date, true );
 		info.commonForInfo(date, time, driver);
 		info.createInfoByResource(date, time, driver);
-		Reporter.log("the process of creating creating creating information by resource is completed-"+date, true );
+		Reporter.log("the process of creating creating information by resource is completed-"+date, true );
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 		
 		Reporter.log("starting the process of creating information by fire fighter-"+date, true );
 		info.commonForInfo(date, time, driver);
 		info.createInfoByFireFighter(date, time, driver);
-		Reporter.log("the process of creating creating creating information by fire fighter is completed-"+date, true );
+		Reporter.log("the process of creating creating information by fire fighter is completed-"+date, true );
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 		
 		
@@ -170,55 +172,63 @@ public class A_testClass extends B_baseClass {
 		Reporter.log("starting the process of creating monitor information-fullday-"+date, true );
 		info.commonForInfo(date, time, driver);
 		info.createMonitorInfoFullDay(date, time, driver);
-		Reporter.log("the process of creating creating creating monitor information-fullday is completed-"+date, true );
+		Reporter.log("the process of creating creating monitor information-fullday is completed-"+date, true );
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 		
 		
 		Reporter.log("starting the process of creating monitor information-future -"+date, true );
 		info.commonForInfo(date, time, driver);
 		info.createMonitorInfoFuture(date, time, driver);
-		Reporter.log("the process of creating creating creating monitor information- future is completed-"+date, true );
+		Reporter.log("the process of creating creating monitor information- future is completed-"+date, true );
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 		
 		Reporter.log("starting the process of creating monitor information-going to end -"+date, true );
 		info.commonForInfo(date, time, driver);
 		info.createMonitorInfoAboutToComplate(date, time, driver);
-		Reporter.log("the process of creating creating creating monitor information- going to end is completed-"+date, true );
+		Reporter.log("the process of creating creating monitor information- going to end is completed-"+date, true );
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 		
 		
 	}
 	
-	@Test(priority=3,enabled=true)
+	@Test(priority=3,enabled=false)
 	public void createEvent ( ) throws Throwable 
 	{
 		Reporter.log("starting the process of creating event by attribute-"+date, true );
 		info.commonForInfo(date, time, driver);
 		eve.createInfoByAttri(date, time, driver);
-		Reporter.log("the process of creating creating creating event by attribute is completed-"+date, true );
+		Reporter.log("the process of creating creating event by attribute is completed-"+date, true );
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 
 		Reporter.log("starting the process of creating event by resource-"+date, true );
 		info.commonForInfo(date, time, driver);
 		eve.createInfoByResource(date, time, driver);
-		Reporter.log("the process of creating creating creating event by resource is completed-"+date, true );
+		Reporter.log("the process of creating creating event by resource is completed-"+date, true );
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 
 		
 		Reporter.log("starting the process of creating event by fire fighter-"+date, true );
 		info.commonForInfo(date, time, driver);
 		eve.createInfoByFireFighte(date, time, driver);
-		Reporter.log("the process of creating creating creating event by fire fighter is completed-"+date, true );
+		Reporter.log("the process of creating creating event by fire fighter is completed-"+date, true );
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 
 		
 		
 		
-		
-		
-		
-		
 	}
+	
+	@Test(priority=3,enabled=true)
+	public void createAvailabilityRequest ( ) throws Throwable 
+	{
+		Reporter.log("starting the process of creating availability request- send immediate-"+date, true );
+		req.createAvailabilityRequestOneTimeImmediate(date, time, driver);
+		Reporter.log("the process of creating creating availability request- send immediate is completed-"+date, true );
+		Reporter.log("__________________________________________________________________________________________________________________", true );
+
+	}
+	
+	
     @AfterMethod 
     public void backToHomePage2 () throws Throwable
     {
