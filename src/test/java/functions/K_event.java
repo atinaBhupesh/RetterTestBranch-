@@ -34,7 +34,7 @@ public class K_event {
 	@FindBy(xpath="//label[text()=\"Set Reminder\"]")private WebElement setRemindar;
 	@FindBy(xpath="//select[@id=\"InformationReminderType\"]")private WebElement selecrRemindarType;
 	@FindBy(xpath="//select[@id=\"InformationReminderMin\"]")private WebElement selectMin;
-	//@FindBy(xpath="")private WebElement;
+	@FindBy(xpath="//input[@id=\"requested_datetime_multi2\"]")private WebElement date2;
 	//@FindBy(xpath="")private WebElement;
 	//@FindBy(xpath="")private WebElement ;
 	//@FindBy(xpath="")private WebElement;

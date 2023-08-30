@@ -7,6 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Reporter;
 
 public class G_testAlarm {
 	
@@ -35,8 +36,13 @@ public class G_testAlarm {
 		
 		@FindBy(xpath="//input[@id=\"inlineRadio2\" and @value=\"4\"]")private WebElement modeAlarmLoop;
 		@FindBy(xpath="//input[@id=\"inlineRadio3\"]")private WebElement modeFireFighter;
-		//@FindBy(xpath="")private WebElement;
-		//@FindBy(xpath="")private WebElement ;
+		
+		
+
+		@FindBy(xpath="(//i[@class=\"fa fa-trash-o\"])[1]")private WebElement deleteAlarm;
+		@FindBy(xpath="//button[@id=\"delYes\"]")private WebElement deleteYes;
+		@FindBy(xpath="//a[@href=\"http://testing.retteralarm.de/admin/Alarms/testAlarmOverviews\"]")private WebElement  testAlarmDashboard;
+		@FindBy(xpath="//button[@id=\"delRec\"]")private WebElement deleteYes1;
 		//@FindBy(xpath="")private WebElement;
 		//@FindBy(xpath="")private WebElement;
 		//@FindBy(xpath="")private WebElement ;
@@ -359,6 +365,62 @@ public class G_testAlarm {
 				
 			}
 
+			
+			
+			public void deleteTestAlarmFromList (WebDriver driver) throws Throwable
+			{
+			
+				testAlarm.click();
+				Thread.sleep(2000);
+				list.click();
+				Thread.sleep(3000);
+				
+				for	(int i=1;i<=7;i++)
+				{
+				deleteAlarm.click();
+				Thread.sleep(2000);
+				deleteYes.click();
+				Thread.sleep(5000);
+				Reporter.log( "Test alarm number-"+i+ " deleted sucessfully from list" , true );
+				driver.navigate().refresh();
+				Thread.sleep(2000);
+				
+				
+				}
+				
+				
+				}
+				
+			
+			
+			
+			
+			
+			
 
+			public void deleteTestAlarmFromDashboard (WebDriver driver) throws Throwable
+			{
+			
+				testAlarm.click();
+				Thread.sleep(2000);
+				testAlarmDashboard.click();
+				Thread.sleep(3000);
+				
+				for	(int i=1;i<=7;i++)
+				{
+				deleteAlarm.click();
+				Thread.sleep(2000);
+				deleteYes1.click();
+				Thread.sleep(5000);
+				Reporter.log( "Test alarm number-"+i+ " deleted sucessfully from dashboard." , true );
+				driver.navigate().refresh();
+				Thread.sleep(2000);
+				
+				
+				}
+				
+				
+				}
+				
 
 }

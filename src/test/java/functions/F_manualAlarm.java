@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Reporter;
 
 public class F_manualAlarm {
 	
@@ -33,8 +34,11 @@ public class F_manualAlarm {
 	
 	@FindBy(xpath="(//a[text()=\"Chat\"])[2]")private WebElement chat2;
 	@FindBy(xpath="(//a[text()=\"Chat\"])[1]")private WebElement chat3;
-	//@FindBy(xpath="")private WebElement ;
-	//@FindBy(xpath="")private WebElement;
+	
+	
+	
+	@FindBy(xpath="(//i[@class=\"fa fa-trash-o\"])[1]")private WebElement deleteAlarm;
+	@FindBy(xpath="//button[@id=\"delRec\"]")private WebElement deleteYes;
 	//@FindBy(xpath="")private WebElement;
 	
 	//@FindBy(xpath="")private WebElement;
@@ -234,7 +238,7 @@ public class F_manualAlarm {
 			enterMassage.click();
 			Thread.sleep(2000);
 			Actions act= new Actions (driver);
-			act.sendKeys("chat-attribute").perform();
+			act.sendKeys("Alarm chat-attribute").perform();
 			Thread.sleep(2000);
 			sendMassage.click();
 			Thread.sleep(2000);
@@ -248,7 +252,7 @@ public class F_manualAlarm {
 			enterMassage.click();
 			Thread.sleep(2000);
 			Actions act= new Actions (driver);
-			act.sendKeys("chat-Resource").perform();
+			act.sendKeys("Alarm chat-Resource").perform();
 			Thread.sleep(2000);
 			sendMassage.click();
 			Thread.sleep(2000);
@@ -262,10 +266,38 @@ public class F_manualAlarm {
 			enterMassage.click();
 			Thread.sleep(2000);
 			Actions act= new Actions (driver);
-			act.sendKeys("chat-FireFighter").perform();
+			act.sendKeys("Alarm chat-FireFighter").perform();
 			Thread.sleep(2000);
 			sendMassage.click();
 			Thread.sleep(2000);
+			
+		}
+		
+		
+		
+		public void deleteManaulAlarm ( WebDriver driver) throws Throwable
+		{
+			
+			
+			
+				
+			Alarm.click();
+			Thread.sleep(2000);
+			manageAlarm.click();
+			Thread.sleep(2000);
+			
+			for	(int i=1;i<=7;i++)
+			{
+			deleteAlarm.click();
+			Thread.sleep(2000);
+			deleteYes.click();
+			Thread.sleep(5000);
+			Reporter.log( "Alarm number-"+i+ " deleted sucessfully from list" , true );
+			driver.navigate().refresh();
+			Thread.sleep(2000);
+			
+			
+			}
 			
 		}
 		

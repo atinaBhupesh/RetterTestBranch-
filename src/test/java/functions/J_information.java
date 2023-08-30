@@ -7,6 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Reporter;
 
 public class J_information {
 
@@ -34,6 +35,9 @@ public class J_information {
 	@FindBy(xpath="//input[@id=\"InfoEndDate\"]")private WebElement moniInfoEndDate;
 	@FindBy(xpath="//input[@id=\"InfoStartTime\"]")private WebElement moniInfoStartTime ;
 	@FindBy(xpath="//input[@id=\"InfoEndTime\"]")private WebElement moniInfoEndTime;
+
+	@FindBy(xpath="(//i[@class=\"fa fa-trash-o\"])[1]")private WebElement deleteAlarm;
+	@FindBy(xpath="//button[@id=\"call_delete_ajax\"]")private WebElement deleteInfoYes;
 	//@FindBy(xpath="")private WebElement;
 	//@FindBy(xpath="")private WebElement;
 	//@FindBy(xpath="")private WebElement ;
@@ -430,6 +434,34 @@ public class J_information {
 			save.click();
 			Thread.sleep(2000);
 		}
+		
+		
+		public void deleteInfoAndEvent (WebDriver driver) throws Throwable
+		{
+			
+			calendar.click();
+			Thread.sleep(2000);
+			manageInfo.click();
+			Thread.sleep(2000);
+			
+			for	(int i=1;i<=10;i++)
+			{
+			deleteAlarm.click();
+			Thread.sleep(2000);
+			deleteInfoYes.click();
+			Thread.sleep(5000);
+			Reporter.log( "Information number-"+i+ " deleted sucessfully" , true );
+			driver.navigate().refresh();
+			Thread.sleep(2000);
+			
+			
+			}
+			
+			
+			
+		}
+		
+		
 	
 	
 	

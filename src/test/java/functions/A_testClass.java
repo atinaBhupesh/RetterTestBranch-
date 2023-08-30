@@ -9,8 +9,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class A_testClass extends B_baseClass {
-	String date="22.08.2023";
-	String time= "16.00";// please add +15 min of current time og german time 
+	String date="29.08.2023";
+	String time= "18.25";// please add +50 min of current time og german time 
 	
 	E_loginClass BC; 
 	D_homePage HP;
@@ -21,6 +21,7 @@ public class A_testClass extends B_baseClass {
 	J_information info;
 	K_event eve;
 	L_availbilityRequest req;
+	M_CreateChatGroup chatG;
 	
 	
 	@BeforeClass
@@ -39,6 +40,7 @@ public class A_testClass extends B_baseClass {
 		info = new J_information (driver) ;
 		eve=new K_event (driver);
 		req= new L_availbilityRequest (driver);
+		chatG = new M_CreateChatGroup (driver);
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 		
 	}
@@ -50,15 +52,16 @@ public class A_testClass extends B_baseClass {
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 	
 	}
-	@Test(priority=1,enabled=false)
-	public void createManualAmarm  ( ) throws Throwable 
+	@Test(priority=1,enabled=true )
+	public void createManualAmarm1  ( ) throws Throwable 
 	{
 		Reporter.log("starting the process of creating manual alarm by attribute-"+date, true );
 		MA.commonForManualAlarm(driver);
 		MA.manualAlarmByAttribute(date,driver);
 		Reporter.log("the process of creating manual alarm by attriute is completed-"+date, true );
 		Reporter.log("__________________________________________________________________________________________________________________", true );
-	
+
+
 		Reporter.log("starting the process of creating manual alarm by resource-"+date, true );
 		MA.commonForManualAlarm(driver);
 		MA.manualAlarmByResourece(date, driver);
@@ -91,7 +94,7 @@ public class A_testClass extends B_baseClass {
 		
 	}
 	
-	@Test(priority=1,enabled=false)
+	@Test(priority=2,enabled=true)
 	public void createTestAmarm  ( ) throws Throwable 
 	{
 		Reporter.log("starting the process of creating test alarm by attribute-"+date, true );
@@ -121,7 +124,7 @@ public class A_testClass extends B_baseClass {
 	
 	
 	
-	@Test(priority=3,enabled=false)
+	@Test(priority=3,enabled=true)
 	public void createStormAmarm  ( ) throws Throwable 
 	{
 		Reporter.log("starting the process of creating storm alarm by resource-"+date, true );
@@ -130,8 +133,8 @@ public class A_testClass extends B_baseClass {
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 
 	}
-	@Test(priority=3,enabled=false)
-	public void createAmarmWithEscalation  ( ) throws Throwable 
+	@Test(priority=4,enabled=true)
+	public void createAmarmWithEscalation1  ( ) throws Throwable 
 	{
 		Reporter.log("starting the process of creating manual alarm with escalation-"+date, true );
 		MA.commonForManualAlarm(driver);
@@ -146,7 +149,7 @@ public class A_testClass extends B_baseClass {
 		
 	}
 	
-	@Test(priority=3,enabled=false)
+	@Test(priority=5,enabled=true)
 	public void createInformation ( ) throws Throwable 
 	{
 		Reporter.log("starting the process of creating information by attribute-"+date, true );
@@ -191,7 +194,7 @@ public class A_testClass extends B_baseClass {
 		
 	}
 	
-	@Test(priority=3,enabled=false)
+	@Test(priority=6,enabled=true)
 	public void createEvent ( ) throws Throwable 
 	{
 		Reporter.log("starting the process of creating event by attribute-"+date, true );
@@ -218,14 +221,81 @@ public class A_testClass extends B_baseClass {
 		
 	}
 	
-	@Test(priority=3,enabled=true)
+	@Test(priority=7,enabled=true)
 	public void createAvailabilityRequest ( ) throws Throwable 
 	{
-		Reporter.log("starting the process of creating availability request- send immediate-"+date, true );
+		Reporter.log("starting the process of creating availability request-one time-send immediate-"+date, true );
 		req.createAvailabilityRequestOneTimeImmediate(date, time, driver);
-		Reporter.log("the process of creating creating availability request- send immediate is completed-"+date, true );
+		Reporter.log("the process of creating creating availability request-one time- send immediate is completed-"+date, true );
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 
+		Reporter.log("starting the process of creating availability request-one time-Schedule-"+date, true );
+		req.createAvailabilityRequestOneTimeScedule(date, time, driver);
+		Reporter.log("the process of creating creating availability request-one time-Schedule is completed-"+date, true );
+		Reporter.log("__________________________________________________________________________________________________________________", true );
+
+		Reporter.log("starting the process of creating availability request-Recursive-"+date, true );
+		req.createAvailabilityRequestRecursive(date, time, driver);
+		Reporter.log("the process of creating creating availability request-Recursive is completed-"+date, true );
+		Reporter.log("__________________________________________________________________________________________________________________", true );
+
+		Reporter.log("starting the process of creating availability request-multiple days-"+date, true );
+		req.createAvailabilityRequestMultipleDay(date, time, driver);
+		Reporter.log("the process of creating creating availability request-multiple days is completed-"+date, true );
+		Reporter.log("__________________________________________________________________________________________________________________", true );
+
+		
+	}
+	
+	@Test(priority=8,enabled=true)
+	public void createChatGroup ( ) throws Throwable 
+	{
+		Reporter.log("starting the process of creating chat group by attribute-"+date, true );
+		chatG.createChatFGrouoByAttribute(date, time, driver);
+		Reporter.log("the process of creating chat group by attribute is completed-"+date, true );
+		Reporter.log("__________________________________________________________________________________________________________________", true );
+		
+		Reporter.log("starting the process of creating chat group by resource-"+date, true );
+		chatG.createChatFGrouoByResource(date, time, driver);
+		Reporter.log("the process of creating chat group by resource is completed-"+date, true );
+		Reporter.log("__________________________________________________________________________________________________________________", true );
+		
+		Reporter.log("starting the process of creating chat group by alarm loop-"+date, true );
+		chatG.createChatFGrouoByAlarmLoop(date, time, driver);
+		Reporter.log("the process of creating chat group by alarm loop is completed-"+date, true );
+		Reporter.log("__________________________________________________________________________________________________________________", true );
+		
+		Reporter.log("starting the process of creating chat group by fire fighter-"+date, true );
+		chatG.createChatFGrouoByFireFighter(date, time, driver);
+		Reporter.log("the process of creating chat group by fire fighter is completed-"+date, true );
+		Reporter.log("__________________________________________________________________________________________________________________", true );
+		
+		
+		
+		
+		
+		Reporter.log("starting the process of send message for attribute chat group-"+date, true );
+		chatG.sendMessageAttribute(date, time, driver);
+		Reporter.log("the process of creating send message for attribute chat group is completed-"+date, true );
+		Reporter.log("__________________________________________________________________________________________________________________", true );
+		
+		
+		Reporter.log("starting the process of send message for resource chat group-"+date, true );
+		chatG.sendMessageResource(date, time, driver);
+		Reporter.log("the process of creating send message for resource chat group is completed-"+date, true );
+		Reporter.log("__________________________________________________________________________________________________________________", true );
+		
+		Reporter.log("starting the process of send message for alarm loop chat group-"+date, true );
+		chatG.sendMessageAlarmLoop(date, time, driver);
+		Reporter.log("the process of creating send message for alarm loop chat group is completed-"+date, true );
+		Reporter.log("__________________________________________________________________________________________________________________", true );
+		
+		Reporter.log("starting the process of send message for fire fighter chat group-"+date, true );
+		chatG.sendMessageFireFighter(date, time, driver);
+		Reporter.log("the process of creating send message for fire fighter chat group is completed-"+date, true );
+		Reporter.log("__________________________________________________________________________________________________________________", true );
+		
+			
 	}
 	
 	

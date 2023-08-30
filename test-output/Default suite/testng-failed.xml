@@ -3,15 +3,20 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="functions.A_testClass">
+      <class name="functions.A_testClassDelete">
         <methods>
-          <include name="logout"/>
           <include name="backToHomePage"/>
-          <include name="LoginDeprrmentUser"/>
-          <include name="createAvailabilityRequest"/>
+          <include name="deleteManualAmarm"/>
           <include name="backToHomePage2"/>
+          <include name="deleteTestAmarmFromList"/>
+          <include name="deleteAvailability"/>
+          <include name="deleteChatGroup"/>
+          <include name="logout"/>
+          <include name="deleteTestAmarmFromDashboard"/>
+          <include name="deleteInfoAndEvent"/>
+          <include name="LoginDeprrmentUser"/>
         </methods>
-      </class> <!-- functions.A_testClass -->
+      </class> <!-- functions.A_testClassDelete -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

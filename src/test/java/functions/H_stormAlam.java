@@ -80,11 +80,11 @@ public class H_stormAlam {
 		Thread.sleep(2000);
 		enterTitle.click();
 		Thread.sleep(2000);
-		act.sendKeys("Storm alarm by attribute-"+date).perform();
+		act.sendKeys("Storm alarm by resource-"+date).perform();
 		Thread.sleep(2000);
 		enterDescription.click();
 		Thread.sleep(2000);
-		act.sendKeys("Storm alarm by attribute-checking-"+date).perform();
+		act.sendKeys("Storm alarm by resource-checking-"+date).perform();
 		Thread.sleep(2000);
 		act.sendKeys(Keys.PAGE_DOWN).perform();
 		Thread.sleep(2000);
