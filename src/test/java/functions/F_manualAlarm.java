@@ -1,5 +1,8 @@
 package functions;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -298,6 +301,21 @@ public class F_manualAlarm {
 			
 			
 			}
+			
+		}
+
+		public void deleteManaulAlarmPractice(WebDriver driver) throws Throwable {
+		
+		
+			Alarm.click();
+			Thread.sleep(2000);
+			manageAlarm.click();
+			Thread.sleep(2000);
+
+            List <WebElement> link = (List<WebElement>) driver.findElement(By.linkText("Chat"));
+			int linkcount=link.size();
+			Reporter.log( "Link number-"+linkcount  , true );
+			
 			
 		}
 		

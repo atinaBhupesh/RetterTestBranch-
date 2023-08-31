@@ -9,8 +9,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class A_testClass extends B_baseClass {
-	String date="29.08.2023";
-	String time= "18.25";// please add +50 min of current time og german time 
+	String date="31.08.2023";
+	String time= "07.50";// please add +40 min of current time og german time 
 	
 	E_loginClass BC; 
 	D_homePage HP;
@@ -199,24 +199,30 @@ public class A_testClass extends B_baseClass {
 	{
 		Reporter.log("starting the process of creating event by attribute-"+date, true );
 		info.commonForInfo(date, time, driver);
-		eve.createInfoByAttri(date, time, driver);
+		eve.createEventByAttri(date, time, driver);
 		Reporter.log("the process of creating creating event by attribute is completed-"+date, true );
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 
 		Reporter.log("starting the process of creating event by resource-"+date, true );
 		info.commonForInfo(date, time, driver);
-		eve.createInfoByResource(date, time, driver);
+		eve.createEventByResource(date, time, driver);
 		Reporter.log("the process of creating creating event by resource is completed-"+date, true );
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 
 		
 		Reporter.log("starting the process of creating event by fire fighter-"+date, true );
 		info.commonForInfo(date, time, driver);
-		eve.createInfoByFireFighte(date, time, driver);
+		eve.createEventByFireFighte(date, time, driver);
 		Reporter.log("the process of creating creating event by fire fighter is completed-"+date, true );
 		Reporter.log("__________________________________________________________________________________________________________________", true );
 
 		
+		Reporter.log("starting the process of creating event by fire fighter which going to end-"+date, true );
+		info.commonForInfo(date, time, driver);
+		eve.createEventByFireFighteGoingToEnd(date, time, driver);
+		Reporter.log("the process of creating creating event by fire fighter which going to end is completed-"+date, true );
+		Reporter.log("__________________________________________________________________________________________________________________", true );
+
 		
 		
 	}

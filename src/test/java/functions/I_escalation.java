@@ -140,11 +140,11 @@ public class I_escalation {
 		Thread.sleep(2000);
 		enterTitle.click();
 		Thread.sleep(2000);
-		act.sendKeys("Storm alarm with attribute-"+date).perform();
+		act.sendKeys("Storm alarm with escalation-"+date).perform();
 		Thread.sleep(2000);
 		enterDescription.click();
 		Thread.sleep(2000);
-		act.sendKeys("Storm alarm with attribute-checking-"+date).perform();
+		act.sendKeys("Storm alarm with escalation-checking-"+date).perform();
 		Thread.sleep(2000);
 		act.sendKeys(Keys.PAGE_DOWN).perform();
 		Thread.sleep(2000);

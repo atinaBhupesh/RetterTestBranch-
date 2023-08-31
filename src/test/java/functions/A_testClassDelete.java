@@ -72,7 +72,7 @@ public class A_testClassDelete extends B_baseClass  {
 		}
 		
 		@Test(priority=2,enabled=true)
-		public void deleteTestAmarmFromList  ( ) throws Throwable 
+		public void deleteTestAlarmFromList  ( ) throws Throwable 
 		{
 			Reporter.log("starting the process of deleting test alarm from list -"+date, true );
 			TA.deleteTestAlarmFromList(driver);
@@ -83,7 +83,7 @@ public class A_testClassDelete extends B_baseClass  {
 		
 		
 		@Test(priority=3,enabled=true)
-		public void deleteTestAmarmFromDashboard  ( ) throws Throwable 
+		public void deleteTestAlarmFromDashboard  ( ) throws Throwable 
 		{
 			Reporter.log("starting the process of deleting test alarm from dashboard -"+date, true );
 			TA.deleteTestAlarmFromDashboard(driver);
@@ -104,17 +104,27 @@ public class A_testClassDelete extends B_baseClass  {
 		}
 		
 		@Test(priority=5,enabled=true)
-		public void deleteAvailability ( ) throws Throwable 
+		public void deleteAvailabilityFromList ( ) throws Throwable 
 		{
-			Reporter.log("starting the process of deleting availability request-"+date, true );
-			req.deleteAvailabilityRequestOneTimeImmediate( driver);
-			Reporter.log("the process of deleting availability request is dashboard-"+date, true );
+			Reporter.log("starting the process of deleting availability request from list-"+date, true );
+			req.deleteAvailabilityRequestFromList( driver);
+			Reporter.log("the process of deleting availability request from list is dashboard-"+date, true );
 			Reporter.log("__________________________________________________________________________________________________________________", true );
 
 		}
+			@Test(priority=6,enabled=true)
+			public void deleteAvailabilityFromHistory ( ) throws Throwable 
+			{
+			Reporter.log("starting the process of deleting availability request from history-"+date, true );
+			req.deleteAvailabilityRequestFromHistory(driver);
+			Reporter.log("the process of deleting availability request from history is dashboard-"+date, true );
+			Reporter.log("__________________________________________________________________________________________________________________", true );
+
+			
+		}
 		
 		
-		@Test(priority=6,enabled=true)
+		@Test(priority=7,enabled=true)
 		public void deleteChatGroup ( ) throws Throwable 
 		{
 			Reporter.log("starting the process of deleting chat group-"+date, true );

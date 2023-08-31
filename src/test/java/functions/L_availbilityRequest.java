@@ -51,9 +51,9 @@ public class L_availbilityRequest
 
 				@FindBy(xpath="(//i[@class=\"fa fa-trash-o\"])[1]")private WebElement deleteAlarm;
 				@FindBy(xpath="//button[@id=\"delYes1\"]")private WebElement deleteInfoYes;
-				//@FindBy(xpath="")private WebElement;
-				//@FindBy(xpath="")private WebElement;
-				//@FindBy(xpath="")private WebElement ;
+				@FindBy(xpath="//a[@href=\"http://testing.retteralarm.de/admin/WeekendPlannings/history\"]")private WebElement availabilityRequestHistory;
+			
+				@FindBy(xpath="(//button[@ type=\"submit\" and @class=\"btn btn-danger\"])[1]")private WebElement deleteAvailYes;
 				//@FindBy(xpath="")private WebElement;
 				//@FindBy(xpath="")private WebElement;
 				//@FindBy(xpath="")private WebElement ;
@@ -386,8 +386,10 @@ public class L_availbilityRequest
 		
 	
 
-	public void deleteAvailabilityRequestOneTimeImmediate( WebDriver driver) throws Throwable {
+	public void deleteAvailabilityRequestFromList( WebDriver driver) throws Throwable {
 		Actions act= new Actions (driver);
+		act.sendKeys(Keys.PAGE_DOWN).perform();
+		Thread.sleep(2000);
 		availabityRequest.click();
 		Thread.sleep(2000);
 		availabityRequest2.click();
@@ -402,8 +404,29 @@ public class L_availbilityRequest
 		driver.navigate().refresh();
 		Thread.sleep(2000);
 		
-		
+		}
 	}
+		
+		public void deleteAvailabilityRequestFromHistory( WebDriver driver) throws Throwable {
+			Actions act= new Actions (driver);
+			act.sendKeys(Keys.PAGE_DOWN).perform();
+			Thread.sleep(2000);
+			availabityRequest.click();
+			Thread.sleep(2000);
+			availabilityRequestHistory.click();
+			Thread.sleep(2000);
+			for	(int i=1;i<=10;i++)
+			{
+			deleteAlarm.click();
+			Thread.sleep(2000);
+			deleteAvailYes.click();
+			Thread.sleep(5000);
+			Reporter.log( "Availability request number(history)-"+i+ " deleted sucessfully" , true );
+			driver.navigate().refresh();
+			Thread.sleep(2000);
+			
+			
+		}
 		
 	}
 }

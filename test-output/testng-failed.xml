@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" parallel="tests" name="Test(failed)">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="functions.A_testClass">
+      <class name="functions.A_testClassDelete">
         <methods>
-          <include name="createEvent"/>
-          <include name="createStormAmarm"/>
-          <include name="logout"/>
           <include name="backToHomePage"/>
-          <include name="LoginDeprrmentUser"/>
-          <include name="createAmarmWithEscalation1"/>
-          <include name="createTestAmarm"/>
-          <include name="createInformation"/>
-          <include name="createAvailabilityRequest"/>
-          <include name="createManualAmarm1"/>
-          <include name="createChatGroup"/>
+          <include name="deleteManualAmarm"/>
           <include name="backToHomePage2"/>
+          <include name="deleteTestAlarmFromList"/>
+          <include name="logout"/>
+          <include name="deleteAvailabilityFromList"/>
+          <include name="deleteInfoAndEvent"/>
+          <include name="deleteTestAlarmFromDashboard"/>
+          <include name="LoginDeprrmentUser"/>
+          <include name="deleteAvailabilityFromHistory"/>
         </methods>
-      </class> <!-- functions.A_testClass -->
+      </class> <!-- functions.A_testClassDelete -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -45,90 +45,11 @@ public class K_event {
 	PageFactory.initElements(driver, this);
 	}
 	
-	public void createInfoByAttri (String date,String time,WebDriver driver) throws Throwable
-	{
-		
-		createNew.click();
-		Thread.sleep(2000);
-		selectDepartment.click();
-		Thread.sleep(2000);
-		Actions act= new Actions (driver);
-		act.sendKeys("ngp").perform();
-		Thread.sleep(2000);
-		act.sendKeys(Keys.ENTER).perform();
-		Thread.sleep(2000);
-		selectFireStation.click();
-		Thread.sleep(2000);
-		act.sendKeys("sai").perform();
-		Thread.sleep(2000);
-		act.sendKeys(Keys.ENTER).perform();
-		Thread.sleep(1000);
-		act.sendKeys(Keys.ENTER).perform();
-		Thread.sleep(2000);
-		act.sendKeys("tekdi").perform();
-		Thread.sleep(2000);
-		act.sendKeys(Keys.ENTER).perform();
-		Thread.sleep(2000);
-		Select se= new Select(selectType);
-		se.selectByVisibleText("Event");
-		Thread.sleep(2000);
-		eventStartDate.click();
-		Thread.sleep(2000);
-		act.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).build().perform();
-		Thread.sleep(2000);
-		act.sendKeys(date).build().perform();
-		Thread.sleep(2000);
-		eventEndDate.click();
-		act.sendKeys(date).perform();
-		Thread.sleep(2000);
-		eventStartTime.click();
-		Thread.sleep(2000);
-		act.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).build().perform();
-		Thread.sleep(1000);
-		act.sendKeys(time).build().perform();
-		Thread.sleep(2000);
-		EventEndTime.click();
-		Thread.sleep(2000);
-		act.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).build().perform();
-		Thread.sleep(1000);
-		act.sendKeys("23.59").build().perform();
-		Thread.sleep(2000);
-		setRemindar.click();
-		Thread.sleep(2000);
-		Select se2= new Select(selecrRemindarType);
-		se2.selectByVisibleText("One time");
-		Thread.sleep(2000);
-		Select se3= new Select(selectMin);
-		se3.selectByVisibleText("3");
-		Thread.sleep(2000);
-		enterInfoTitle.click();
-		Thread.sleep(2000);
-		act.sendKeys("Adding event by attribute-"+date).perform();
-		Thread.sleep(2000);
-		location.click();
-		act.sendKeys("pune").perform();
-		Thread.sleep(2000);
-		act.sendKeys(Keys.TAB).perform();
-		Thread.sleep(2000);
-		act.sendKeys("Adding event by attribute-checking-"+date).perform();
-		Thread.sleep(2000);
-		act.sendKeys(Keys.PAGE_DOWN).perform();
-		Thread.sleep(2000);
-		modeAttribute.click();
-		Thread.sleep(2000);
-		selectAll.click();
-		Thread.sleep(2000);
-		save.click();
-		Thread.sleep(2000);
-		
-		
-	}
 	
 	
 	
 	
-	
-	public void createInfoByResource (String date,String time,WebDriver driver) throws Throwable
+	public void createEventByResource (String date,String time,WebDriver driver) throws Throwable
 	{
 		
 		createNew.click();
@@ -208,7 +129,7 @@ public class K_event {
 	}
 	
 	
-	public void createInfoByFireFighte (String date,String time,WebDriver driver) throws Throwable
+	public void createEventByFireFighte (String date,String time,WebDriver driver) throws Throwable
 	{
 		
 		createNew.click();
@@ -287,8 +208,166 @@ public class K_event {
 		
 	}
 	
-	
-	
+	public void createEventByFireFighteGoingToEnd (String date,String time,WebDriver driver) throws Throwable
+	{
+		
+		createNew.click();
+		Thread.sleep(2000);
+		selectDepartment.click();
+		Thread.sleep(2000);
+		Actions act= new Actions (driver);
+		act.sendKeys("ngp").perform();
+		Thread.sleep(2000);
+		act.sendKeys(Keys.ENTER).perform();
+		Thread.sleep(2000);
+		selectFireStation.click();
+		Thread.sleep(2000);
+		act.sendKeys("sai").perform();
+		Thread.sleep(2000);
+		act.sendKeys(Keys.ENTER).perform();
+		Thread.sleep(1000);
+		act.sendKeys(Keys.ENTER).perform();
+		Thread.sleep(2000);
+		act.sendKeys("tekdi").perform();
+		Thread.sleep(2000);
+		act.sendKeys(Keys.ENTER).perform();
+		Thread.sleep(2000);
+		Select se= new Select(selectType);
+		se.selectByVisibleText("Event");
+		Thread.sleep(2000);
+		eventStartDate.click();
+		Thread.sleep(2000);
+		act.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).build().perform();
+		Thread.sleep(1000);
+		act.sendKeys(date).build().perform();
+		Thread.sleep(2000);
+		eventEndDate.click();
+		act.sendKeys(date).perform();
+		Thread.sleep(2000);
+		eventStartTime.click();
+		Thread.sleep(2000);
+		act.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).build().perform();
+		Thread.sleep(1000);
+		act.sendKeys(time).build().perform();
+		Thread.sleep(2000);
+		EventEndTime.click();
+		Thread.sleep(2000);
+		act.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).build().perform();
+		Thread.sleep(1000);
+		act.sendKeys(time).build().perform();
+		Thread.sleep(2000);
+		setRemindar.click();
+		Thread.sleep(2000);
+		Select se2= new Select(selecrRemindarType);
+		se2.selectByVisibleText("One time");
+		Thread.sleep(2000);
+		Select se3= new Select(selectMin);
+		se3.selectByVisibleText("3");
+		Thread.sleep(2000);
+		enterInfoTitle.click();
+		Thread.sleep(2000);
+		act.sendKeys("Adding event by fire fighter-"+date).perform();
+		Thread.sleep(2000);
+		location.click();
+		act.sendKeys("pune").perform();
+		Thread.sleep(2000);
+		act.sendKeys(Keys.TAB).perform();
+		Thread.sleep(2000);
+		act.sendKeys("Adding event by fire fighter-checking-"+date).perform();
+		Thread.sleep(2000);
+		act.sendKeys(Keys.PAGE_DOWN).perform();
+		Thread.sleep(2000);
+		modeFireFighter.click();
+		Thread.sleep(2000);
+		selectAll.click();
+		Thread.sleep(2000);
+		save.click();
+		Thread.sleep(2000);
+		
+		
+	}
+
+	public void createEventByAttri(String date, String time, WebDriver driver) throws Throwable 
+	{
+		createNew.click();
+		Thread.sleep(2000);
+		selectDepartment.click();
+		Thread.sleep(2000);
+		Actions act= new Actions (driver);
+		act.sendKeys("ngp").perform();
+		Thread.sleep(2000);
+		act.sendKeys(Keys.ENTER).perform();
+		Thread.sleep(2000);
+		selectFireStation.click();
+		Thread.sleep(2000);
+		act.sendKeys("sai").perform();
+		Thread.sleep(2000);
+		act.sendKeys(Keys.ENTER).perform();
+		Thread.sleep(1000);
+		act.sendKeys(Keys.ENTER).perform();
+		Thread.sleep(2000);
+		act.sendKeys("tekdi").perform();
+		Thread.sleep(2000);
+		act.sendKeys(Keys.ENTER).perform();
+		Thread.sleep(2000);
+		Select se= new Select(selectType);
+		se.selectByVisibleText("Event");
+		Thread.sleep(2000);
+		eventStartDate.click();
+		Thread.sleep(2000);
+		act.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).build().perform();
+		Thread.sleep(2000);
+		act.sendKeys(date).build().perform();
+		Thread.sleep(2000);
+		eventEndDate.click();
+		act.sendKeys(date).perform();
+		Thread.sleep(2000);
+		eventStartTime.click();
+		Thread.sleep(2000);
+		act.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).build().perform();
+		Thread.sleep(1000);
+		act.sendKeys(time).build().perform();
+		Thread.sleep(2000);
+		EventEndTime.click();
+		Thread.sleep(2000);
+		act.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).build().perform();
+		Thread.sleep(1000);
+		act.sendKeys("23.59").build().perform();
+		Thread.sleep(2000);
+		setRemindar.click();
+		Thread.sleep(2000);
+		Select se2= new Select(selecrRemindarType);
+		se2.selectByVisibleText("One time");
+		Thread.sleep(2000);
+		Select se3= new Select(selectMin);
+		se3.selectByVisibleText("3");
+		Thread.sleep(2000);
+		enterInfoTitle.click();
+		Thread.sleep(2000);
+		act.sendKeys("Adding event by attribute-"+date).perform();
+		Thread.sleep(2000);
+		location.click();
+		act.sendKeys("pune").perform();
+		Thread.sleep(2000);
+		act.sendKeys(Keys.TAB).perform();
+		Thread.sleep(2000);
+		act.sendKeys("Adding event by attribute-checking-"+date).perform();
+		Thread.sleep(2000);
+		act.sendKeys(Keys.PAGE_DOWN).perform();
+		Thread.sleep(2000);
+		modeAttribute.click();
+		Thread.sleep(2000);
+		selectAll.click();
+		Thread.sleep(2000);
+		save.click();
+		Thread.sleep(2000);
+		
+		
+	}
+
+
+
+
 	
 	
 	
